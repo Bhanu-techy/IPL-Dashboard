@@ -1,0 +1,84 @@
+/* Write your CSS here */
+.LatestMatchcontainer {
+  background-color: #1e293b;
+  display: flex;
+  justify-content: center;
+  width: 92vw;
+  align-items: center;
+  color: #ffff;
+  font-family: bree serif;
+  padding: 10px;
+  margin: 20px;
+}
+.LatestMatch-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  width: 150px;
+  height: 150px;
+}
+.para {
+  align-items: left;
+  font-size: 20px;
+  color: #ffff;
+  font-family: bree serif;
+}
+.date {
+  font-size: 18px;
+}
+.text {
+  width: 50vw;
+  font-size: 14px;
+  text-align: right;
+}
+.img-div {
+  width: 50%;
+}
+.description {
+  width: 500px;
+}
+.line {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .LatestMatchcontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .description {
+    width: 90%;
+  }
+  .logo {
+    width: 80px;
+    height: 80px;
+  }
+  .img-div {
+    width: 15%;
+  }
+  .LatestMatch-header {
+    height: 220px;
+
+    justify-content: space-between;
+  }
+  .line {
+    display: block;
+    width: 100%;
+  }
+  .para {
+    font-size: 14px;
+  }
+  .description {
+    width: 200px;
+  }
+  .date {
+    font-size: 14px;
+  }
+  .text {
+    text-align: left;
+  }
+}

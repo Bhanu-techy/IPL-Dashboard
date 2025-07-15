@@ -1,0 +1,34 @@
+/* Write your CSS here */
+.team-matches-page {
+  padding: 10px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-image: linear-gradient(to top, #1e293b, #d91c1f, #a4261d);
+}
+.banner {
+  width: 95vw;
+}
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 95vw;
+}
+.latestmatch-text{
+  color: #ffffff;
+  font-family: bree serif;
+  font-size: 27px;
+  align-self: flex-start;
+  margin-left: 20px;
+}
+
+@media (max-width : 768px){
+  .latestmatch-text{
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,76 @@
+/* Write your CSS here */
+.bgcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: cover;
+  padding: 10px;
+  background-image: url('https://assets.ccbp.in/frontend/react-js/ipl-dashboard-lg-bg.png');
+}
+.ipllogo {
+  height: 80px;
+  width: 60px;
+  margin: 10px;
+}
+.heading {
+  color: #ffff;
+  font-size: 50px;
+  font-family: bree serif;
+}
+.headcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.teamList {
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  width: 40vw;
+  margin: 15px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  height: 120px;
+  background-color: #867d7d;
+  opacity: 0.6;
+}
+.teamlistcontainer {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+
+  width: 100vw;
+}
+.teamnames {
+  color: #ffff;
+  font-size: 26px;
+  text-align: center;
+  font-family: bree serif;
+}
+.teamlogo {
+  width: 90px;
+  height: 100px;
+  margin: 10px;
+}
+
+@media (max-width: 768px) {
+  .bgcontainer {
+    background-color: aqua;
+  }
+  .teamlogo {
+    width: 50px;
+    height: 60px;
+  }
+  .heading {
+    font-size: 38px;
+  }
+  .teamList {
+    width: 60vw;
+  }
+  .teamnames {
+    font-size: 20px;
+    text-decoration: none;
+  }
+}

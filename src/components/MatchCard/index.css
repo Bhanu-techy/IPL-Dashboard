@@ -1,0 +1,48 @@
+.list {
+  width: 250px;
+  background-color: #1e293b;
+  border-radius: 10px;
+  color: #ffff;
+  margin: 12px;
+  font-family: bree serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  height: 400px;
+  text-align: center;
+}
+.competingTeamLogo {
+  width: 110px;
+  height: 135px;
+}
+.competingTeamName {
+  font-size: 24px;
+  height: 40px;
+}
+.result {
+  font-size: 16px;
+}
+.lost {
+  color: #e31a1a;
+  font-size: 16px;
+}
+.win {
+  color: #18ed66;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .list {
+    width: 150px;
+    height: 300px;
+    margin: 5px;
+  }.competingTeamLogo{
+    width: 80px;
+    height: 100px;
+  }.result{
+    font-size: 13px;
+  }.competingTeamName{
+    font-size: 20px;
+  }
+}
