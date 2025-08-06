@@ -1,4 +1,6 @@
 import {Component} from 'react'
+import {Link} from 'react-router-dom'
+import {Pie, PieChart, Legend, Cell, ResponsiveContainer} from 'recharts'
 import Loader from 'react-loader-spinner'
 import LatestMatch from '../LatestMatch'
 import MatchCard from '../MatchCard'
@@ -56,13 +58,50 @@ class TeamMatches extends Component {
     })
   }
 
+  onClickBackBtn = () => {
+    const {history} = this.props
+    history.replace('/')
+  }
+
   render() {
     const {isLoading} = this.state
     const {teamBannerUrl, latestMatchDetails, recentMatches} = this.state
+
+    let wins = 0
+    let loss = 0
+    let draws = 0
+
+    for (const each of recentMatches) {
+      if (each.matchStatus === 'Won') {
+        wins += 1
+      } else if (each.matchStatus === 'Lost') {
+        loss += 1
+      } else {
+        draws += 1
+      }
+    }
+
+    const stats = [
+      {
+        name: 'WIN',
+        count: wins,
+      },
+      {
+        name: 'Lost',
+        count: loss,
+      },
+      {
+        name: 'DRAW',
+        count: draws,
+      },
+    ]
+
+    console.log(wins)
+
     return (
       <div className="team-matches-page">
         {isLoading ? (
-          <div data-testid="loader">
+          <div data-testid="loader" className="loader-container">
             <Loader type="Oval" color="#ffffff" height={50} width={50} />
           </div>
         ) : (
@@ -78,6 +117,41 @@ class TeamMatches extends Component {
                 <MatchCard details={each} key={each.id} />
               ))}
             </ul>
+            <div className="PieChart">
+              
+                <PieChart width={730} height={250}>
+                  <Pie
+                    data={stats}
+                    dataKey="count"
+                    cx="600%"
+                    cy="40%"
+                    innerRadius={60}
+                    outerRadius={80}
+                    fill="#82ca9d"
+                  >
+                    <Cell name="wins" fill="#fecba6" />
+                    <Cell name="lost" fill="#b3d23f" />
+                    <Cell name="draw" fill="#a44c9e" />
+                  </Pie>
+                  <Legend
+                    iconType="circle"
+                    layout="vertical"
+                    verticalAlign="middle"
+                    align="right"
+                  />
+                  <Legend
+                    iconType="circle"
+                    layout="vertical"
+                    verticalAlign="middle"
+                    align="right"
+                  />
+                </PieChart>
+              
+            </div>
+
+            <button type="button" onClick={this.onClickBackBtn}>
+              Back
+            </button>
           </div>
         )}
       </div>

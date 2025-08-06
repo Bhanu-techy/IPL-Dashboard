@@ -1,5 +1,4 @@
 import {Component} from 'react'
-
 import Loader from 'react-loader-spinner'
 import TeamCard from '../TeamCard'
 import './index.css'
@@ -19,6 +18,7 @@ class Home extends Component {
       id: each.id,
       teamImgUrl: each.team_image_url,
     }))
+
     this.setState({teamList: filtteredData, isLoading: false})
   }
 
@@ -27,7 +27,7 @@ class Home extends Component {
     return (
       <div>
         {isLoading ? (
-          <div data-testid="loader">
+          <div data-testid="loader" className="loader-div">
             <Loader type="Oval" color="#ffffff" height={50} width={50} />
           </div>
         ) : (

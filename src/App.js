@@ -5,14 +5,14 @@ import NotFound from './components/NotFound'
 import './App.css'
 
 const App = () => (
-  <BrowserRouter>
+ 
     <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/team-matches/:id" component={TeamMatches} />
-      <Route path="/bad-found" component={NotFound} />
-      <Redirect to="bad-found" />
+      <Route path="/bad-path" component={NotFound} />
+      <Redirect to="bad-path" />
     </Switch>
-  </BrowserRouter>
+  
 )
 
 export default App
